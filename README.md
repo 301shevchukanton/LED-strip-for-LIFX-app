@@ -12,7 +12,7 @@ which are supported by the fast led library.
 
 ## Supported LED chipsets
 
-Here's a list of all the LED chipsets are supported.  More details on the led chipsets are included *TODO: Link to wiki page*
+Here's a list of all the LED chipsets are supported.  More details on the led chipsets are included 
 
 * Adafruit's Neopixel - aka the WS2812B (also WS2811/WS2812, also suppored in lo-speed mode) - a 3 wire addressable led chipset
 * TM1809/4 - 3 wire chipset, cheaply available on aliexpress.com
