@@ -1,30 +1,14 @@
-FastLED
+LED strip for LIFX app
 =======
+This is a project for remote controlling of LED strips connected to arduino via original mobile LIFX application.
+This code will work with controllable and uncontrollable stips as well. 
+Actually, that project based on FastLED library and kayno/arduinolifx project. All of the following is possible only 
+coz of you, guys, big thanks for your examples! 
 
-This is a library for easily & efficiently controlling a wide variety of LED chipsets, like the ones
-sold by adafruit (Neopixel, LPD8806), Sparkfun (WS2801), and aliexpress.  In addition to writing to the
-leds, this library also includes a number of functions for high-performing 8bit math for manipulating
-your RGB values, as well as low level classes for abstracting out access to pins and SPI hardware, while
-still keeping things as fast as possible.
+So via this project you can ezly control a wide variety of LET strips chipsets, like the ones
+sold by adafruit (Neopixel, LPD8806), Sparkfun (WS2801), and aliexpress and actually of all other chips, 
+which are supported by the fast led library.
 
-We have multiple goals with this library:
-
-* Quick start for new developers - hook up your leds and go, no need to think about specifics of the led chipsets being used
-* Zero pain switching LED chipsets - you get some new leds that the library supports, just change the definition of LEDs you're using, et. voila!  Your code is running with the new leds.
-* High performance - with features like zero cost global brightness scaling, high performance 8-bit math for RGB manipulation, and some of the fastest bit-bang'd SPI support around, FastLED wants to keep as many CPU cycles available for your led patterns as possible
-
-## Simple example
-
-How quickly can you get up and running with the library?  Here's a simple blink program:
-
-	#include "FastLED.h"
-	#define NUM_LEDS 60
-	CRGB leds[NUM_LEDS];
-	void setup() { FastLED.addLeds<NEOPIXEL, 6>(leds, NUM_LEDS); }
-	void loop() { 
-		leds[0] = CRGB::White; FastLED.show(); delay(30); 
-		leds[0] = CRGB::Black; FastLED.show(); delay(30);
-	}
 
 ## Supported LED chipsets
 
@@ -41,24 +25,27 @@ Here's a list of all the LED chipsets are supported.  More details on the led ch
 
 LPD6803, HL1606, and "595"-style shift registers are no longer supported by the library.  The older Version 1 of the library ("FastSPI_LED") has support for these, but is missing many of the advanced features of current versions and is no longer being maintained.
 
-
-## Supported platforms
-
-Right now the library is supported on a variety of arduino compatable platforms.  If it's ARM or AVR and uses the arduino software (or a modified version of it to build) then it is likely supported.  Note that we have a long list of upcoming platforms to support, so if you don't see what you're looking for here, ask, it may be on the roadmap (or may already be supported).  N.B. at the moment we are only supporting the stock compilers that ship with the arduino software.  Support for upgraded compilers, as well as using AVR studio and skipping the arduino entirely, should be coming in a near future release.
-
-* Arduino & compatibles - straight up arduino devices, uno, duo, leonardo, mega, nano, etc...
-* Teensy 2, Teensy++ 2, Teensy 3 - arduino compataible from pjrc.com with some extra goodies (note the teensy 3 is ARM, not AVR!)
-
-What types of platforms are we thinking about supporting in the future?  Here's a short list:  Arduino Due, MSP430, ChipKit32, Maple, Beagleboard
-
-## What about that name?
-
-Wait, what happend to FastSPI_LED and FastSPI_LED2?  The library was initially named FastSPI_LED because it was focused on very fast and efficient SPI access.  However, since then, the library has expanded to support a number of LED chipsets that don't use SPI, as well as a number of math and utility functions for LED processing across the board.  We decided that the name FastLED more accurately represents the totality of what the library provides, everything fast, for LEDs.
-
-## For more information
-
-Check out the official site http://fastled.io for links to documentation, issues, and news
+so, for quick setup you should do the next tips: 
+## Setup for controllable strips:
+* open the RGBMoodLifx.cpp 
+* set the count of your LEDs in the strip to the end of the string "#define NUM_LEDS "
+* set the pin number for controlling your strip from Arduino in #define DATA_PIN 
+* set the type of your LED controller to the #define CONTROLLER_TYPE
 
 
-*TODO* - get candy
+## Setup for uncontrollable RGB strips:
+* open the lifx_rebuilding.ino
+* set the pins for red, green and blue LED pins to the const int redPin, const int greenPin and const int bluePin.
+
+also you have to set unique MAC-adress into byte mac array in lifx_rebuilding.ino.
+
+
+Special big thanks to:
+https://github.com/kayno/arduinolifx
+https://github.com/FastLED/FastLED (http://fastled.io/)
+https://github.com/magicmonkey/lifxjs/
+and others! 
+
+
+
 

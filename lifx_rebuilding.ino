@@ -21,6 +21,11 @@
 
  And also the RGBMood library by Harold Waterkeyn, which was modified
  slightly to support powering down the LED
+
+  Modified by Anton Shevchuk, May 9, 2015
+  for coworking with FastLed library.
+  https://github.com/301shevchukanton/LED-strip-for-LIFX-app
+
  */
 
 

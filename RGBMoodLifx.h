@@ -4,6 +4,7 @@
 
   Modified by Anton Shevchuk, May 9, 2015
   for coworking with FastLed library.
+  https://github.com/301shevchukanton/LED-strip-for-LIFX-app
 
   Modified (slightly) for LIFX bulb - just so we can send RGB 0,0,0 to turn the bulb off!
 

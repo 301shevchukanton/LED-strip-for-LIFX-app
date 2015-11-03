@@ -5,6 +5,7 @@
 #define NUM_LEDS 60
 CRGB leds[NUM_LEDS];
 #define DATA_PIN 11
+#define CONTROLLER_TYPE WS2811
 CLEDController *pLed;
 uint8_t dc[256] = {
     0,   1,   1,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,
@@ -44,7 +45,7 @@ RGBMoodLifx::RGBMoodLifx(uint8_t rp, uint8_t gp, uint8_t bp)
   holding_color_ = 1000;
   fading_ = false;
   last_update_ = millis();
-  FastLED.addLeds<WS2811, DATA_PIN, RGB>(leds, NUM_LEDS);
+  FastLED.addLeds<CONTROLLER_TYPE, DATA_PIN, RGB>(leds, NUM_LEDS);
   pLed = new ClocklessController_Trinket<4, NS(400), NS(400), NS(450), GRB>();
 LEDS.addLeds(pLed, leds, NUM_LEDS);
 }
