@@ -5,7 +5,7 @@ This code will work with controllable and uncontrollable stips as well.
 Actually, that project based on FastLED library and kayno/arduinolifx project. All of the following is possible only 
 coz of you, guys, big thanks for your examples! 
 
-So via this project you can ezly control a wide variety of LET strips chipsets, like the ones
+Via this project you can ezly control a wide variety of LED strips chipsets, like the ones
 sold by adafruit (Neopixel, LPD8806), Sparkfun (WS2801), and aliexpress and actually of all other chips, 
 which are supported by the fast led library.
 
